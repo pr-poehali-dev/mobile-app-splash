@@ -115,11 +115,11 @@ const Index = () => {
       <section className="relative h-[85vh] min-h-[600px] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://cdn.poehali.dev/projects/ca50f167-a69a-4d79-9690-bc5c0f5db47f/files/23d9bd5a-0d56-4a86-b462-21da1ca8679f.jpg"
+            src="https://cdn.poehali.dev/projects/ca50f167-a69a-4d79-9690-bc5c0f5db47f/files/80fabcb2-99ed-476f-9922-724d00190921.jpg"
             alt="Padel Court"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
         <div className="relative z-10 flex h-full items-center justify-center px-4">
           <div className="text-center animate-fade-in max-w-5xl">
@@ -138,18 +138,18 @@ const Index = () => {
               {menuItems.map((item, idx) => (
                 <Card 
                   key={idx}
-                  className="bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 transition-all hover:scale-105 cursor-pointer animate-scale-in"
+                  className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all hover:scale-105 cursor-pointer animate-scale-in"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <Link to={item.link}>
                     <CardHeader className="text-center p-3">
-                      <div className="mx-auto mb-2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                      <div className="mx-auto mb-2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                         <Icon name={item.icon as any} className="h-6 w-6 text-white" />
                       </div>
                       <CardTitle className="text-white text-base md:text-lg mb-0.5">
                         {item.title}
                       </CardTitle>
-                      <CardDescription className="text-white/70 text-xs">
+                      <CardDescription className="text-white/80 text-xs">
                         {item.description}
                       </CardDescription>
                     </CardHeader>
