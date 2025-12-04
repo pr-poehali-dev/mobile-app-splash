@@ -51,7 +51,7 @@ const Index = () => {
             </SheetTrigger>
             <SheetContent 
               side="right" 
-              className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-primary/20"
+              className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-primary/20 flex flex-col"
             >
               <SheetHeader className="text-left">
                 <SheetTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -62,7 +62,7 @@ const Index = () => {
                 </SheetDescription>
               </SheetHeader>
               
-              <nav className="mt-8 space-y-2">
+              <nav className="mt-8 space-y-2 flex-1 overflow-y-auto pb-4">
                 {menuItems.map((item, idx) => (
                   <Link
                     key={idx}
@@ -86,7 +86,7 @@ const Index = () => {
                 ))}
               </nav>
               
-              <div className="absolute bottom-8 left-6 right-6">
+              <div className="pt-4 pb-6 px-6 border-t border-primary/20 -mx-6">
                 <Button 
                   asChild 
                   className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
