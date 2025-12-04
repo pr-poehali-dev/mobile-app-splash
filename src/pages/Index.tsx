@@ -1,9 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const menuItems = [
     { icon: 'Target', title: 'Корты', description: 'Профессиональные корты', link: '/courts' },
     { icon: 'Trophy', title: 'Турниры', description: 'Соревнования для всех', link: '/tournaments' },
@@ -17,23 +28,78 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-20 items-center justify-between px-4">
-          <div className="flex items-center gap-3">
-            <Icon name="CircleDot" className="h-10 w-10 text-primary" />
-            <div>
-              <h1 className="text-2xl md:text-3xl font-extrabold leading-tight">
-                Padel club
-              </h1>
-              <p className="text-xs md:text-sm text-muted-foreground font-medium">
-                Завода имени Ильича
-              </p>
-            </div>
-          </div>
-          <Button asChild className="bg-primary hover:bg-primary/90">
-            <Link to="/courts">
-              <Icon name="Calendar" className="mr-2 h-4 w-4" />
-              Забронировать
-            </Link>
-          </Button>
+          <Link to="/" className="flex items-center gap-3 group">
+            <Icon name="CircleDot" className="h-10 w-10 text-primary transition-transform group-hover:scale-110" />
+            <h1 className="text-2xl md:text-3xl font-extrabold leading-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Padel club
+            </h1>
+          </Link>
+          
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="relative w-12 h-12 hover:bg-primary/10"
+              >
+                <div className="flex flex-col gap-1.5 w-6">
+                  <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                  <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
+                  <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+                </div>
+              </Button>
+            </SheetTrigger>
+            <SheetContent 
+              side="right" 
+              className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur-xl border-l border-primary/20"
+            >
+              <SheetHeader className="text-left">
+                <SheetTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Меню
+                </SheetTitle>
+                <SheetDescription className="text-muted-foreground">
+                  Навигация по сайту
+                </SheetDescription>
+              </SheetHeader>
+              
+              <nav className="mt-8 space-y-2">
+                {menuItems.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.link}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 transition-all hover:scale-[1.02] border border-transparent hover:border-primary/20"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:from-primary/30 group-hover:to-secondary/30 transition-all">
+                      <Icon name={item.icon as any} className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {item.title}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                    <Icon name="ChevronRight" className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  </Link>
+                ))}
+              </nav>
+              
+              <div className="absolute bottom-8 left-6 right-6">
+                <Button 
+                  asChild 
+                  className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+                  size="lg"
+                >
+                  <Link to="/courts" onClick={() => setIsMenuOpen(false)}>
+                    <Icon name="Calendar" className="mr-2 h-5 w-5" />
+                    Забронировать корт
+                  </Link>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 
