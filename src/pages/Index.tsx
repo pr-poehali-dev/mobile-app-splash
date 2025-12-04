@@ -91,29 +91,11 @@ const Index = () => {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-3xl md:text-4xl font-bold mb-6">Добро пожаловать</h3>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Мы создали современное пространство для игры в padel. Четыре профессиональных корта, 
               регулярные турниры, система рейтингов и опытные тренеры — всё это ждёт вас 
               в Padel club Завода имени Ильича.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <p className="text-5xl font-bold text-primary mb-2">4</p>
-                <p className="text-sm text-muted-foreground">Корта</p>
-              </div>
-              <div className="text-center">
-                <p className="text-5xl font-bold text-secondary mb-2">500+</p>
-                <p className="text-sm text-muted-foreground">Игроков</p>
-              </div>
-              <div className="text-center">
-                <p className="text-5xl font-bold text-accent mb-2">50+</p>
-                <p className="text-sm text-muted-foreground">Турниров</p>
-              </div>
-              <div className="text-center">
-                <p className="text-5xl font-bold text-primary mb-2">24/7</p>
-                <p className="text-sm text-muted-foreground">Работаем</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
