@@ -165,19 +165,6 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="bg-muted/30 py-16">
-        <div className="container px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Добро пожаловать</h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Мы создали современное пространство для игры в padel. Четыре профессиональных корта, 
-              регулярные турниры, система рейтингов и опытные тренеры — всё это ждёт вас 
-              в Padel club Завода имени Ильича.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="container px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-none">
