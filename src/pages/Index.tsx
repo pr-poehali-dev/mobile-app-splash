@@ -26,22 +26,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b border-primary/30 bg-black/90 backdrop-blur-xl shadow-2xl shadow-primary/20">
-        <div className="container flex h-24 items-center justify-between px-6">
-          <Link to="/" className="flex items-center gap-4 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
-              <img 
-                src="https://cdn.poehali.dev/files/98270635-cd16-4e7d-873f-83c204ef2347.png" 
-                alt="Tennis Ball" 
-                className="relative h-16 w-16 transition-transform group-hover:scale-110 group-hover:rotate-12"
-              />
-            </div>
+      <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/98 backdrop-blur-xl supports-[backdrop-filter]:bg-background/95 shadow-lg">
+        <div className="container flex h-20 items-center justify-between px-4">
+          <Link to="/" className="flex items-center gap-3 group">
+            <img 
+              src="https://cdn.poehali.dev/files/98270635-cd16-4e7d-873f-83c204ef2347.png" 
+              alt="Tennis Ball" 
+              className="h-12 w-12 transition-transform group-hover:scale-110 group-hover:rotate-12"
+            />
             <div>
-              <h1 className="text-3xl md:text-4xl font-black tracking-wide uppercase text-primary drop-shadow-lg">
+              <h1 className="text-2xl md:text-3xl font-black tracking-tight uppercase bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent">
                 Padel Club
               </h1>
-              <p className="text-sm md:text-base font-bold text-secondary tracking-widest">
+              <p className="text-xs md:text-sm font-semibold text-muted-foreground tracking-wider">
                 ЗВИ
               </p>
             </div>
@@ -52,57 +49,57 @@ const Index = () => {
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="relative w-14 h-14 hover:bg-primary/20 border-2 border-primary/40 rounded-lg"
+                className="relative w-12 h-12 hover:bg-primary/10"
               >
-                <div className="flex flex-col gap-2 w-7">
-                  <span className={`h-1 w-full bg-primary rounded-full transition-all ${isMenuOpen ? 'rotate-45 translate-y-3' : ''}`} />
-                  <span className={`h-1 w-full bg-primary rounded-full transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
-                  <span className={`h-1 w-full bg-primary rounded-full transition-all ${isMenuOpen ? '-rotate-45 -translate-y-3' : ''}`} />
+                <div className="flex flex-col gap-1.5 w-6">
+                  <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                  <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
+                  <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
                 </div>
               </Button>
             </SheetTrigger>
             <SheetContent 
               side="top" 
-              className="h-auto max-h-[85vh] bg-black/95 backdrop-blur-xl border-b-4 border-primary/50 flex flex-col rounded-b-3xl shadow-2xl shadow-primary/20"
+              className="h-auto max-h-[85vh] bg-black/70 backdrop-blur-2xl border-b border-primary/30 flex flex-col rounded-b-2xl"
             >
-              <SheetHeader className="text-center pt-6 pb-4 border-b border-primary/20">
-                <SheetTitle className="text-4xl font-black uppercase text-primary tracking-wider">
+              <SheetHeader className="text-center pt-4 pb-3">
+                <SheetTitle className="text-3xl font-bold text-white">
                   Меню
                 </SheetTitle>
               </SheetHeader>
               
-              <nav className="mt-4 space-y-3 flex-1 overflow-y-auto pb-4 px-6">
+              <nav className="mt-3 space-y-2 flex-1 overflow-y-auto pb-3 px-4">
                 {menuItems.map((item, idx) => (
                   <Link
                     key={idx}
                     to={item.link}
                     onClick={() => setIsMenuOpen(false)}
-                    className="group flex items-center gap-5 p-5 rounded-2xl bg-secondary/30 hover:bg-secondary/50 transition-all border-2 border-primary/20 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/30"
+                    className="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/20 transition-all border border-white/10 hover:border-primary/50"
                   >
-                    <div className="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-all shadow-lg">
-                      <Icon name={item.icon as any} className="h-8 w-8 text-primary group-hover:text-black transition-colors" />
+                    <div className="w-14 h-14 rounded-full bg-primary/30 flex items-center justify-center group-hover:bg-primary/50 transition-all">
+                      <Icon name={item.icon as any} className="h-7 w-7 text-white" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-black text-xl text-primary group-hover:text-primary transition-colors uppercase tracking-wide">
+                      <p className="font-bold text-lg text-white group-hover:text-primary transition-colors">
                         {item.title}
                       </p>
-                      <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                      <p className="text-sm text-white/70">
                         {item.description}
                       </p>
                     </div>
-                    <Icon name="ChevronRight" className="h-7 w-7 text-primary/60 group-hover:text-primary group-hover:translate-x-2 transition-all" />
+                    <Icon name="ChevronRight" className="h-6 w-6 text-white/60 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                   </Link>
                 ))}
               </nav>
               
-              <div className="p-6 border-t-2 border-primary/30 bg-black/50">
+              <div className="p-5 border-t border-primary/30">
                 <Button 
                   asChild 
-                  className="w-full bg-primary hover:bg-primary/90 text-black font-black text-xl py-7 rounded-xl shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/50 transition-all uppercase tracking-wide"
+                  className="w-full bg-primary hover:bg-primary/90 text-lg"
                   size="lg"
                 >
                   <Link to="/courts" onClick={() => setIsMenuOpen(false)}>
-                    <Icon name="Calendar" className="mr-3 h-7 w-7" />
+                    <Icon name="Calendar" className="mr-2 h-6 w-6" />
                     Забронировать корт
                   </Link>
                 </Button>
@@ -112,55 +109,44 @@ const Index = () => {
         </div>
       </header>
 
-      <section className="relative h-[90vh] min-h-[700px] overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black">
+      <section className="relative h-[85vh] min-h-[600px] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://cdn.poehali.dev/projects/ca50f167-a69a-4d79-9690-bc5c0f5db47f/files/23d9bd5a-0d56-4a86-b462-21da1ca8679f.jpg"
             alt="Padel Court"
-            className="h-full w-full object-cover opacity-30"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-gray-900/70 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
         </div>
-        <div className="relative z-10 flex h-full items-center justify-center px-6">
-          <div className="text-center animate-fade-in max-w-6xl w-full">
-            <div className="mb-16">
-              <h2 className="text-6xl md:text-8xl font-black mb-6 uppercase tracking-wider">
-                <span className="bg-gradient-to-r from-primary via-yellow-300 to-primary bg-clip-text text-transparent drop-shadow-2xl">
-                  Padel Club
-                </span>
-              </h2>
-              <p className="text-2xl md:text-3xl text-secondary font-bold tracking-wide mb-12">
-                Современный клуб для настоящих чемпионов
-              </p>
-            </div>
-            
+        <div className="relative z-10 flex h-full items-center justify-center px-4">
+          <div className="text-center animate-fade-in max-w-5xl">
             <Button 
               asChild 
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-black font-black text-xl px-16 py-8 shadow-2xl shadow-primary/50 hover:shadow-primary/70 transition-all hover:scale-110 uppercase tracking-wider rounded-2xl mb-16"
+              className="bg-primary hover:bg-primary/90 transition-all hover:scale-105 text-lg px-12 py-6 shadow-2xl animate-fade-in mb-12"
             >
               <Link to="/courts">
-                <Icon name="Calendar" className="mr-3 h-8 w-8" />
+                <Icon name="Calendar" className="mr-3 h-6 w-6" />
                 Забронировать корт
               </Link>
             </Button>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-3xl mx-auto mb-6">
               {menuItems.map((item, idx) => (
                 <Card 
                   key={idx}
-                  className="bg-secondary/40 backdrop-blur-xl border-2 border-primary/30 hover:border-primary hover:bg-secondary/60 transition-all hover:scale-105 cursor-pointer animate-scale-in shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/40"
+                  className="bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 transition-all hover:scale-105 cursor-pointer animate-scale-in"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <Link to={item.link}>
-                    <CardHeader className="text-center p-5">
-                      <div className="mx-auto mb-3 w-16 h-16 rounded-2xl bg-primary/20 backdrop-blur-sm flex items-center justify-center border-2 border-primary/40">
-                        <Icon name={item.icon as any} className="h-8 w-8 text-primary" />
+                    <CardHeader className="text-center p-3">
+                      <div className="mx-auto mb-2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                        <Icon name={item.icon as any} className="h-6 w-6 text-white" />
                       </div>
-                      <CardTitle className="text-primary text-lg md:text-xl mb-1 font-black uppercase tracking-wide">
+                      <CardTitle className="text-white text-base md:text-lg mb-0.5">
                         {item.title}
                       </CardTitle>
-                      <CardDescription className="text-muted-foreground text-sm">
+                      <CardDescription className="text-white/70 text-xs">
                         {item.description}
                       </CardDescription>
                     </CardHeader>
@@ -172,26 +158,24 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="container px-6 py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-5xl mx-auto">
-          <Card className="bg-gradient-to-br from-secondary/50 to-secondary/30 border-4 border-primary/40 shadow-2xl shadow-primary/30 rounded-3xl">
-            <CardContent className="p-10 md:p-16 text-center">
-              <h3 className="text-4xl md:text-5xl font-black mb-6 uppercase tracking-wide text-primary">
-                Начните играть прямо сейчас
-              </h3>
-              <p className="text-xl text-foreground mb-10">
+      <section className="container px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-none">
+            <CardContent className="p-8 md:p-12 text-center">
+              <h3 className="text-3xl font-bold mb-4">Начните играть прямо сейчас</h3>
+              <p className="text-lg text-muted-foreground mb-8">
                 Забронируйте корт или узнайте больше о наших услугах
               </p>
-              <div className="flex flex-col sm:flex-row gap-5 justify-center">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-black font-black text-xl px-12 py-7 uppercase tracking-wide rounded-xl shadow-xl shadow-primary/40">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
                   <Link to="/courts">
-                    <Icon name="Calendar" className="mr-3 h-7 w-7" />
+                    <Icon name="Calendar" className="mr-2 h-5 w-5" />
                     Забронировать корт
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-xl px-12 py-7 font-bold border-4 border-primary text-primary hover:bg-primary hover:text-black uppercase tracking-wide rounded-xl">
+                <Button asChild size="lg" variant="outline" className="text-lg px-8">
                   <Link to="/contacts">
-                    <Icon name="Phone" className="mr-3 h-7 w-7" />
+                    <Icon name="Phone" className="mr-2 h-5 w-5" />
                     Связаться с нами
                   </Link>
                 </Button>
@@ -201,18 +185,14 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="border-t-4 border-primary/40 bg-black py-12">
-        <div className="container px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <img 
-                src="https://cdn.poehali.dev/files/98270635-cd16-4e7d-873f-83c204ef2347.png" 
-                alt="Logo" 
-                className="h-10 w-10"
-              />
-              <span className="font-black text-xl text-primary uppercase tracking-wide">Padel club ЗВИ</span>
+      <footer className="border-t bg-muted/30 py-8">
+        <div className="container px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Icon name="CircleDot" className="h-6 w-6 text-primary" />
+              <span className="font-bold">Padel club Завода имени Ильича</span>
             </div>
-            <p className="text-lg text-secondary font-bold">© 2024 Все права защищены</p>
+            <p className="text-sm text-muted-foreground">© 2024 Все права защищены</p>
           </div>
         </div>
       </footer>
