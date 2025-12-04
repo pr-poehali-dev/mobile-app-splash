@@ -26,14 +26,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/98 backdrop-blur-xl supports-[backdrop-filter]:bg-background/95 shadow-lg">
         <div className="container flex h-20 items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-3 group">
-            <Icon name="CircleDot" className="h-10 w-10 text-primary transition-transform group-hover:scale-110" />
+            <img 
+              src="https://cdn.poehali.dev/files/98270635-cd16-4e7d-873f-83c204ef2347.png" 
+              alt="Tennis Ball" 
+              className="h-12 w-12 transition-transform group-hover:scale-110 group-hover:rotate-12"
+            />
             <div>
-              <h1 className="text-xl md:text-2xl font-extrabold leading-tight">
-                Padel Club ЗВИ
+              <h1 className="text-2xl md:text-3xl font-black tracking-tight uppercase bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent">
+                Padel Club
               </h1>
+              <p className="text-xs md:text-sm font-semibold text-muted-foreground tracking-wider">
+                ЗВИ
+              </p>
             </div>
           </Link>
           
