@@ -60,49 +60,49 @@ const Index = () => {
             </SheetTrigger>
             <SheetContent 
               side="top" 
-              className="h-auto max-h-[90vh] bg-background/80 backdrop-blur-2xl border-b border-primary/20 flex flex-col rounded-b-3xl"
+              className="h-auto max-h-[85vh] bg-background/10 backdrop-blur-3xl border-b border-white/10 flex flex-col rounded-b-2xl"
             >
-              <SheetHeader className="text-center pt-6">
-                <SheetTitle className="text-3xl font-bold text-primary">
+              <SheetHeader className="text-center pt-4 pb-2">
+                <SheetTitle className="text-2xl font-bold text-primary">
                   Меню
                 </SheetTitle>
-                <SheetDescription className="text-muted-foreground">
+                <SheetDescription className="text-muted-foreground text-sm">
                   Навигация по сайту
                 </SheetDescription>
               </SheetHeader>
               
-              <nav className="mt-6 space-y-2 flex-1 overflow-y-auto pb-4 px-4">
+              <nav className="mt-2 space-y-1 flex-1 overflow-y-auto pb-2 px-4">
                 {menuItems.map((item, idx) => (
                   <Link
                     key={idx}
                     to={item.link}
                     onClick={() => setIsMenuOpen(false)}
-                    className="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/10 transition-all hover:scale-[1.02] border border-transparent hover:border-primary/30 bg-white/5"
+                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-all border border-transparent hover:border-white/20"
                   >
-                    <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-all shadow-lg">
-                      <Icon name={item.icon as any} className="h-7 w-7 text-primary" />
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-all">
+                      <Icon name={item.icon as any} className="h-6 w-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-bold text-foreground group-hover:text-primary transition-colors text-lg">
+                      <p className="font-bold text-foreground group-hover:text-primary transition-colors">
                         {item.title}
                       </p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs text-muted-foreground">
                         {item.description}
                       </p>
                     </div>
-                    <Icon name="ChevronRight" className="h-6 w-6 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                    <Icon name="ChevronRight" className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                   </Link>
                 ))}
               </nav>
               
-              <div className="p-6 border-t border-primary/20">
+              <div className="p-4 border-t border-white/10">
                 <Button 
                   asChild 
-                  className="w-full bg-primary hover:bg-primary/90 transition-opacity text-lg py-6"
+                  className="w-full bg-primary hover:bg-primary/90 transition-opacity"
                   size="lg"
                 >
                   <Link to="/courts" onClick={() => setIsMenuOpen(false)}>
-                    <Icon name="Calendar" className="mr-2 h-6 w-6" />
+                    <Icon name="Calendar" className="mr-2 h-5 w-5" />
                     Забронировать корт
                   </Link>
                 </Button>
