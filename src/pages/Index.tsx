@@ -126,7 +126,7 @@ const Index = () => {
               Современный спортивный комплекс с профессиональными кортами
             </p>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
               {menuItems.map((item, idx) => (
                 <Card 
                   key={idx}
@@ -149,6 +149,18 @@ const Index = () => {
                 </Card>
               ))}
             </div>
+            
+            <Button 
+              asChild 
+              size="lg"
+              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105 text-lg px-12 py-6 shadow-2xl animate-fade-in"
+              style={{ animationDelay: '0.6s' }}
+            >
+              <Link to="/courts">
+                <Icon name="Calendar" className="mr-3 h-6 w-6" />
+                Забронировать корт
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
