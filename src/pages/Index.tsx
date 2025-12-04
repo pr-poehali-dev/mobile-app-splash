@@ -122,9 +122,17 @@ const Index = () => {
                 Завода имени Ильича
               </p>
             </div>
-            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto font-medium">
-              Современный спортивный комплекс с профессиональными кортами
-            </p>
+            
+            <Button 
+              asChild 
+              size="lg"
+              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105 text-lg px-12 py-6 shadow-2xl animate-fade-in mb-12"
+            >
+              <Link to="/courts">
+                <Icon name="Calendar" className="mr-3 h-6 w-6" />
+                Забронировать корт
+              </Link>
+            </Button>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-3xl mx-auto mb-6">
               {menuItems.map((item, idx) => (
@@ -149,18 +157,6 @@ const Index = () => {
                 </Card>
               ))}
             </div>
-            
-            <Button 
-              asChild 
-              size="lg"
-              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105 text-lg px-12 py-6 shadow-2xl animate-fade-in"
-              style={{ animationDelay: '0.6s' }}
-            >
-              <Link to="/courts">
-                <Icon name="Calendar" className="mr-3 h-6 w-6" />
-                Забронировать корт
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
