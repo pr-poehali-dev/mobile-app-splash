@@ -130,18 +130,18 @@ const Index = () => {
               {menuItems.map((item, idx) => (
                 <Card 
                   key={idx}
-                  className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all hover:scale-105 cursor-pointer animate-scale-in"
+                  className="bg-white/20 backdrop-blur-xl border-white/30 hover:bg-white/30 transition-all hover:scale-105 cursor-pointer animate-scale-in shadow-lg"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <Link to={item.link}>
                     <CardHeader className="text-center p-4 md:p-6">
-                      <div className="mx-auto mb-3 w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                        <Icon name={item.icon as any} className="h-7 w-7 text-white" />
+                      <div className="mx-auto mb-3 w-14 h-14 rounded-full bg-white/25 backdrop-blur-sm flex items-center justify-center shadow-md">
+                        <Icon name={item.icon as any} className="h-7 w-7 text-white drop-shadow-lg" />
                       </div>
-                      <CardTitle className="text-white text-lg md:text-xl mb-1">
+                      <CardTitle className="text-white text-lg md:text-xl mb-1 drop-shadow-md">
                         {item.title}
                       </CardTitle>
-                      <CardDescription className="text-white/60 text-sm">
+                      <CardDescription className="text-white/80 text-sm drop-shadow">
                         {item.description}
                       </CardDescription>
                     </CardHeader>
