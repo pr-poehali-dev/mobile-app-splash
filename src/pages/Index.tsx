@@ -30,9 +30,11 @@ const Index = () => {
         <div className="container flex h-20 items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-3 group">
             <Icon name="CircleDot" className="h-10 w-10 text-primary transition-transform group-hover:scale-110" />
-            <h1 className="text-2xl md:text-3xl font-extrabold leading-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Padel club
-            </h1>
+            <div>
+              <h1 className="text-xl md:text-2xl font-extrabold leading-tight">
+                Padel Club ЗВИ
+              </h1>
+            </div>
           </Link>
           
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -89,7 +91,7 @@ const Index = () => {
               <div className="pt-4 pb-6 px-6 border-t border-primary/20 -mx-6">
                 <Button 
                   asChild 
-                  className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+                  className="w-full bg-primary hover:bg-primary/90 transition-opacity"
                   size="lg"
                 >
                   <Link to="/courts" onClick={() => setIsMenuOpen(false)}>
@@ -114,19 +116,10 @@ const Index = () => {
         </div>
         <div className="relative z-10 flex h-full items-center justify-center px-4">
           <div className="text-center animate-fade-in max-w-5xl">
-            <div className="mb-8">
-              <h2 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tight">
-                Padel club
-              </h2>
-              <p className="text-2xl md:text-3xl text-white/90 font-bold">
-                Завода имени Ильича
-              </p>
-            </div>
-            
             <Button 
               asChild 
               size="lg"
-              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105 text-lg px-12 py-6 shadow-2xl animate-fade-in mb-12"
+              className="bg-primary hover:bg-primary/90 transition-all hover:scale-105 text-lg px-12 py-6 shadow-2xl animate-fade-in mb-12"
             >
               <Link to="/courts">
                 <Icon name="Calendar" className="mr-3 h-6 w-6" />
