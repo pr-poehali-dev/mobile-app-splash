@@ -18,7 +18,7 @@ const Index = () => {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-20 items-center justify-between px-4">
           <div className="flex items-center gap-3">
-            <Icon name="Trophy" className="h-10 w-10 text-primary" />
+            <Icon name="CircleDot" className="h-10 w-10 text-primary" />
             <div>
               <h1 className="text-2xl md:text-3xl font-extrabold leading-tight">
                 Padel club
@@ -131,7 +131,7 @@ const Index = () => {
         <div className="container px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <Icon name="Trophy" className="h-6 w-6 text-primary" />
+              <Icon name="CircleDot" className="h-6 w-6 text-primary" />
               <span className="font-bold">Padel club Завода имени Ильича</span>
             </div>
             <p className="text-sm text-muted-foreground">© 2024 Все права защищены</p>

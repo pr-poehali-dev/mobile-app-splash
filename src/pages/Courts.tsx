@@ -20,7 +20,7 @@ const Courts = () => {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
         <div className="container flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-2">
-            <Icon name="Trophy" className="h-8 w-8 text-primary" />
+            <Icon name="CircleDot" className="h-8 w-8 text-primary" />
             <span className="text-xl font-bold">Padel club<br/>Завода имени Ильича</span>
           </Link>
           <Button asChild className="bg-primary hover:bg-primary/90">
