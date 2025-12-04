@@ -26,19 +26,22 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/98 backdrop-blur-xl supports-[backdrop-filter]:bg-background/95 shadow-lg">
+      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-2xl shadow-2xl">
         <div className="container flex h-20 items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src="https://cdn.poehali.dev/files/98270635-cd16-4e7d-873f-83c204ef2347.png" 
-              alt="Tennis Ball" 
-              className="h-12 w-12 transition-transform group-hover:scale-110 group-hover:rotate-12"
-            />
+            <div className="relative w-12 h-12">
+              <div className="absolute inset-0 bg-primary/30 rounded-full blur-md"></div>
+              <img 
+                src="https://cdn.poehali.dev/projects/ca50f167-a69a-4d79-9690-bc5c0f5db47f/files/6a340099-c705-449e-9c02-7c1ee4903420.jpg" 
+                alt="Tennis Ball" 
+                className="relative h-12 w-12 rounded-full transition-transform group-hover:scale-110 group-hover:rotate-12"
+              />
+            </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-black tracking-tight uppercase bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent">
+              <h1 className="text-2xl md:text-3xl font-black tracking-tight uppercase text-white">
                 Padel Club
               </h1>
-              <p className="text-xs md:text-sm font-semibold text-muted-foreground tracking-wider">
+              <p className="text-xs md:text-sm font-semibold text-white/70 tracking-wider">
                 ЗВИ
               </p>
             </div>
